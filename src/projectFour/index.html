@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RPG Task Manager — Практическая №4</title>
+  <link rel="icon" href="../portfolio/avatar.png" type="image/png">
+  <link rel="stylesheet" href="../portfolio/style.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a class="logo" href="https://spike758.github.io/portfolio/">Spike758</a>
+      <ul class="nav__list">
+        <li><a href="#tasks" class="js-anchor">Задачи</a></li>
+        <li><a href="#stats" class="js-anchor">Статистика</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero rpg-hero">
+      <div class="hero__content rpg-hero__content">
+        <div class="hero__text">
+          <h1>⚔️ RPG Task Manager ⚔️</h1>
+          <p class="lead">Планировщик задач с прокачкой героя: выполняй квесты, получай XP и повышай уровень.</p>
+          <div class="roles">Квесты → XP → Level Up</div>
+        </div>
+
+        <div class="hero__avatar rpg-hero__card" id="characterCard" aria-live="polite">
+          <div class="rpg-character">
+            <div class="rpg-character__row">
+              <img id="characterAvatar" class="rpg-avatar" src="./assets/images/avatar-warrior.svg" alt="Аватар героя" width="96" height="96" />
+              <div class="rpg-character__meta">
+                <div class="rpg-character__title">Герой: <span id="characterName">—</span></div>
+                <div class="rpg-character__sub">Создан: <span id="characterCreatedAt">—</span></div>
+              </div>
+              <div class="rpg-level">
+                <div class="rpg-level__label">LEVEL</div>
+                <div class="rpg-level__value" id="characterLevel">1</div>
+              </div>
+            </div>
+
+            <div class="rpg-xp">
+              <div class="rpg-xp__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="rpg-xp__fill" id="xpFill" style="width:0%"></div>
+              </div>
+              <div class="rpg-xp__text">
+                <span id="xpText">0/100 XP</span>
+              </div>
+            </div>
+
+            <div class="rpg-character__actions">
+              <button class="btn rpg-btn-secondary" id="openSetup">Настроить героя</button>
+              <button class="btn rpg-btn-danger" id="resetProgress">Сбросить прогресс</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="section" id="tasks">
+        <h2>📝 Новая задача</h2>
+
+        <form id="taskForm" class="rpg-form" novalidate>
+          <label>
+            Название задачи *
+            <input name="title" id="taskTitle" required maxlength="80" placeholder="Например: Убить дракона" />
+          </label>
+
+          <label>
+            Описание (опционально)
+            <textarea name="description" id="taskDescription" rows="3" maxlength="240" placeholder="Коротко опиши квест..."></textarea>
+          </label>
+
+          <fieldset class="rpg-fieldset">
+            <legend>Сложность</legend>
+            <div class="rpg-difficulty" role="radiogroup" aria-label="Сложность задачи">
+              <label class="rpg-pill"><input type="radio" name="difficulty" value="easy" checked> Легкая <span class="muted">(+10 XP)</span></label>
+              <label class="rpg-pill"><input type="radio" name="difficulty" value="medium"> Средняя <span class="muted">(+25 XP)</span></label>
+              <label class="rpg-pill"><input type="radio" name="difficulty" value="hard"> Сложная <span class="muted">(+50 XP)</span></label>
+              <label class="rpg-pill"><input type="radio" name="difficulty" value="epic"> Эпическая <span class="muted">(+100 XP)</span></label>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn">➕ Добавить задачу</button>
+          <div id="taskFormMessage" class="rpg-form__message" role="status"></div>
+        </form>
+
+        <div class="rpg-columns">
+          <section class="rpg-panel" aria-labelledby="activeTasksTitle">
+            <h3 id="activeTasksTitle">⚡ Активные задачи</h3>
+            <div id="activeTasks" class="rpg-tasklist"></div>
+            <div id="activeEmpty" class="muted rpg-empty hidden">Пока нет активных задач. Добавь первый квест.</div>
+          </section>
+
+          <section class="rpg-panel" aria-labelledby="completedTasksTitle">
+            <h3 id="completedTasksTitle">🏁 Выполненные</h3>
+            <div id="completedTasks" class="rpg-tasklist"></div>
+            <div id="completedEmpty" class="muted rpg-empty hidden">Выполненных задач пока нет.</div>
+          </section>
+        </div>
+      </section>
+
+      <section class="section" id="stats">
+        <h2>📊 Статистика</h2>
+        <div class="skills-grid rpg-stats">
+          <div class="skill-card">
+            <h3>Прогресс</h3>
+            <ul class="skill-list">
+              <li>Выполнено задач <strong id="statCompleted">0</strong></li>
+              <li>Всего заработано XP <strong id="statTotalXp">0</strong></li>
+              <li>Дата создания героя <strong id="statCreatedAt">—</strong></li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>История</h3>
+            <div id="history" class="rpg-history"></div>
+            <div id="historyEmpty" class="muted rpg-empty hidden">История появится после выполнения задач.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Практическая работа №4 — RPG Todo Planner</p>
+    </div>
+  </footer>
+
+  <div class="rpg-toasts" id="toasts" aria-live="polite" aria-relevant="additions"></div>
+
+  <div class="rpg-modal hidden" id="setupModal" role="dialog" aria-modal="true" aria-labelledby="setupTitle">
+    <div class="rpg-modal__backdrop" data-close="true"></div>
+    <div class="rpg-modal__card">
+      <h2 id="setupTitle">Создай героя</h2>
+      <p class="muted">Имя и аватар сохраняются в браузере (localStorage).</p>
+
+      <form id="setupForm" class="rpg-form" novalidate>
+        <label>
+          Имя героя *
+          <input id="setupName" required maxlength="24" placeholder="Например: Верзилий" />
+        </label>
+
+        <fieldset class="rpg-fieldset">
+          <legend>Аватар</legend>
+          <div class="rpg-avatars" id="avatarChoices">
+            <label class="rpg-avatarChoice"><input type="radio" name="avatar" value="warrior" checked><img src="./assets/images/avatar-warrior.svg" alt="Воин" width="64" height="64"></label>
+            <label class="rpg-avatarChoice"><input type="radio" name="avatar" value="mage"><img src="./assets/images/avatar-mage.svg" alt="Маг" width="64" height="64"></label>
+            <label class="rpg-avatarChoice"><input type="radio" name="avatar" value="rogue"><img src="./assets/images/avatar-rogue.svg" alt="Разбойник" width="64" height="64"></label>
+            <label class="rpg-avatarChoice"><input type="radio" name="avatar" value="paladin"><img src="./assets/images/avatar-paladin.svg" alt="Паладин" width="64" height="64"></label>
+          </div>
+        </fieldset>
+
+        <div class="rpg-modal__actions">
+          <button class="btn" type="submit">Начать приключение</button>
+          <button class="btn rpg-btn-secondary" type="button" id="closeSetup">Отмена</button>
+        </div>
+
+        <div id="setupMessage" class="rpg-form__message" role="status"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/storage.js" defer></script>
+  <script src="./js/character.js" defer></script>
+  <script src="./js/tasks.js" defer></script>
+  <script src="./js/app.js" defer></script>
+</body>
+</html>
