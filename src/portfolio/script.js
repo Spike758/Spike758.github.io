@@ -21,7 +21,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
   },{threshold:0.5});
   sections.forEach(s=>navObserver.observe(s));
-  document.querySelectorAll('.nav__list a').forEach(a=>{ a.addEventListener('click', e=>{ e.preventDefault(); document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'}); }); });
+  
+  document.querySelectorAll('.nav__list a').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const href = a.getAttribute('href');
+      if(!href) return;
+      if(href.startsWith('#')){
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if(target) target.scrollIntoView({behavior:'smooth'});
+      }
+      
+    });
+  });
   const form = document.getElementById('contactForm'); const msg = document.getElementById('formMessage');
   form.addEventListener('submit', e=>{ e.preventDefault(); const data = new FormData(form); if(!data.get('name')||!data.get('email')||!data.get('message')){ msg.textContent='Заполните все поля'; msg.style.color='salmon'; return; } msg.textContent='Сообщение отправлено (локально).'; msg.style.color='lightgreen'; form.reset(); });
 });

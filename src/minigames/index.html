@@ -67,6 +67,52 @@
       </section>
     </div>
 
+    <h2 style="margin-top:28px;color:var(--accent)">Дополнительные игры</h2>
+    <div class="games-grid" style="margin-top:12px">
+    
+      <section class="game-card" id="reaction">
+        <h2>Игра на скорость реакции</h2>
+        <div>Нажимайте кнопку как можно быстрее после её появления.</div>
+        <div style="position:relative;height:160px;margin-top:12px;background:linear-gradient(180deg,rgba(0,0,0,0.03),transparent);border-radius:10px;display:flex;align-items:center;justify-content:center" id="reaction-area">
+          <button id="react-btn" class="btn" style="display:none;position:absolute">Нажми!</button>
+        </div>
+        <div class="game-controls">
+          <button id="react-start" class="btn">Старт</button>
+          <button id="react-reset" class="small">Сброс</button>
+        </div>
+        <div style="margin-top:8px">Таймер: <span id="react-timer">30</span> с</div>
+        <div style="margin-top:8px">Успешных нажатий: <span id="react-success">0</span></div>
+        <div style="margin-top:8px">Среднее время реакции: <span id="react-avg">—</span> мс</div>
+        <div id="react-msg" style="margin-top:8px;color:var(--muted)"></div>
+      </section>
+
+      
+      <section class="game-card" id="tictactoe">
+        <h2>Крестики‑нолики</h2>
+        <div>Текущий игрок: <strong id="tt-current">X</strong></div>
+        <div id="tt-board" style="display:grid;grid-template-columns:repeat(3,80px);gap:8px;margin-top:12px"></div>
+        <div class="game-controls" style="margin-top:12px">
+          <button id="tt-restart" class="small">Перезапустить</button>
+          <button id="tt-reset-scores" class="small">Обнулить счёт</button>
+        </div>
+        <div style="margin-top:8px">Счёт — X: <span id="tt-score-x">0</span> O: <span id="tt-score-o">0</span></div>
+        <div id="tt-msg" style="margin-top:8px;color:var(--muted)"></div>
+      </section>
+
+      
+      <section class="game-card" id="maze">
+        <h2>Лабиринт</h2>
+        <div style="margin-top:8px">Управление стрелками. Найдите выход.</div>
+        <div id="maze-board" style="margin-top:12px;display:grid;grid-template-columns:repeat(9,28px);gap:4px"></div>
+        <div class="game-controls" style="margin-top:12px">
+          <button id="maze-start" class="btn">Старт</button>
+          <button id="maze-reset" class="small">Перезапустить</button>
+        </div>
+        <div style="margin-top:8px">Время: <span id="maze-timer">0</span> с</div>
+        <div id="maze-msg" style="margin-top:8px;color:var(--muted)"></div>
+      </section>
+    </div>
+
   </main>
 
   <script src="./minigames.js"></script>
