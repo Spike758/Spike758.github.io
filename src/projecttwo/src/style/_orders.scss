@@ -1,0 +1,96 @@
+.content{
+    .wrapper{
+        .table-container{
+            &.orders{
+               .col{
+                .block-edit{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .list{
+                    display: none;
+                    width: 100%;
+                    .block{
+                    width: 100%;
+                    position: relative;
+                     display: flex;
+                     justify-content: space-between;
+                     align-items: center;
+                     border: 1px solid $dark;
+                     padding: 10px;
+                     &:hover{
+                        cursor: pointer;
+                     }
+                     h3{
+                        user-select: none;
+                     }
+                    }
+                    .p-block{
+                        position: absolute;
+                        display: none;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 40px;
+                        background-color: $dark;
+                        width: 15.1%;
+                        p{
+                            user-select: none;
+                            width: 80%;
+                            padding: 10px;
+                            color: $light;
+                            border-bottom: 1px solid $light;
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                        :last-child{
+                            border-bottom: none;
+                        }
+                    }
+                 }
+                &.d{
+                    height: 39px;
+                }
+                &.s{
+                    height: 49px;
+                }
+                &.n{
+
+                    height: 90px;
+                }
+                &.o{
+                    height: 100px;
+                }
+                &.j{
+                    display: flex;
+                    flex-direction: column;
+                    height: 110px;
+                }
+                &.k{
+                    height: 120px;
+                }
+                #mb{
+                    margin-bottom: 10px;
+                }
+                &.position{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: start;
+                    :nth-child(1){
+                        margin-bottom: 10px;
+                    }
+                }
+                &.order{
+                    h3{
+                        margin-right: 10px;
+                    }
+                }
+               }
+               
+            }
+        }
+    }
+   
+}

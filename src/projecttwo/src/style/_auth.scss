@@ -1,0 +1,65 @@
+.auth{
+    background-color: $main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .auth-logo{
+        position: absolute;
+        top: 50px;
+        .circle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            border: 4px solid $light;
+            background-color: transparent;
+            border-radius: 100%;
+        }
+        h1{
+            color: $light;
+            text-align: center;
+        }
+    }
+    .modal-auth{
+        padding: 20px;
+        background-color: $light;
+        border-radius: 20px;
+        width: 27%;
+        
+        .top{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .btn{
+            &.inverse{
+                width: 100%;
+            }
+        }
+        input:not([type='button']) {
+            padding: 10px;
+            width: 94%;
+            height: 100%;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 1px solid $strokeDark;
+            margin-bottom: 15px;
+            font-family: "Montserrat";
+            font-weight: 500;
+            &:focus{
+              border: 1px solid $light;
+            }
+          }
+        h3{
+            text-align: center;
+            color: $dark;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+    }
+}

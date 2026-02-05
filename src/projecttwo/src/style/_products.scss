@@ -1,0 +1,73 @@
+.content{
+    .wrapper{
+        .table-container{
+            &.products{
+                .col{
+                    padding: 15px 50px;
+                    &.title{
+                        padding: 25px 50px;
+                    }
+                    &.price{
+                        height: 49px;
+                    }
+                    &.action{
+                        height: 39px;
+                    }
+                    &.name{
+                        text-align: start;
+                        line-height: 24px;
+                        justify-content: flex-start;
+                        h3{
+                            height: 49px;
+                        }
+                    }
+                   
+                }
+            }
+        }
+    }
+    
+}
+#modalFormProducts{
+    &.active{
+        top: 30%;
+        .top{
+            margin-bottom: 15px;
+        }
+    }
+}
+#table_edit_products{
+    &.active{
+        top: 30%;
+        .top{
+            margin-bottom: 10px;
+            textarea{
+                padding: 15px;
+                width: 94%;
+                height: 100%;
+                font-size: 20px;
+                border-radius: 10px;
+                border: 1px solid $strokeDark;
+                margin-bottom: 15px;
+                font-family: "Montserrat";
+                font-weight: 500;
+                resize: none;
+                &:focus{
+                  border: 1px solid $light;
+                }
+            }
+        }
+    }
+    
+}
+label {
+    position: relative;
+    display: inline-block;
+    svg{
+        position: absolute;
+        top: 32%;
+        right: -1160px;
+        stroke: $strokeLight;
+    }
+  }
+  
