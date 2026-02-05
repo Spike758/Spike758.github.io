@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Minigames — Spike758</title>
+
+  <link rel="stylesheet" href="../portfolio/style.css">
+  <style>
+    
+    .games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+    .game-card{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 12px 30px rgba(2,6,23,0.55)}
+    .game-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .small{padding:6px 10px;border-radius:8px}
+    .score{font-weight:700;font-size:20px;margin-top:8px}
+    .saved-list{margin-top:10px;max-height:160px;overflow:auto;padding:6px;border-radius:8px;background:rgba(0,0,0,0.03)}
+  </style>
+</head>
+<body>
+  <header class="nav" style="margin:16px">
+    <a class="logo" href="/">Spike758</a>
+    <div></div>
+  </header>
+
+  <main class="container">
+    <h1 style="color:var(--accent)">Мини‑игры</h1>
+    <p class="lead">Три мини‑игры: Кликер, Генератор приключений и Угадай число.</p>
+
+    <div class="games-grid">
+     
+      <section class="game-card" id="clicker">
+        <h2>Кликер</h2>
+        <div class="score">Счёт: <span id="click-score">0</span></div>
+        <div class="game-controls">
+          <button id="click-btn" class="btn">Клик!</button>
+          <button id="click-reset" class="small">Сбросить</button>
+          <button id="click-save" class="small">Сохранить рекорд</button>
+        </div>
+        <div style="margin-top:8px">Время: <span id="click-timer">30</span> с</div>
+        <div id="click-message" style="margin-top:8px;color:var(--muted)"></div>
+        <div style="margin-top:8px">Лучший: <span id="click-best">0</span></div>
+      </section>
+
+     
+      <section class="game-card" id="adventure">
+        <h2>Генератор приключений</h2>
+        <div id="adv-text" style="min-height:48px">Нажмите «Сгенерировать», чтобы получить приключение.</div>
+        <div class="game-controls">
+          <button id="adv-gen" class="btn">Сгенерировать</button>
+          <button id="adv-save" class="small">Сохранить</button>
+          <button id="adv-clear" class="small">Очистить сохранённые</button>
+        </div>
+        <div class="saved-list" id="adv-saved"></div>
+      </section>
+
+    
+      <section class="game-card" id="guess">
+        <h2>Угадай число</h2>
+        <div>Угадай число от 1 до 100</div>
+        <div class="game-controls" style="margin-top:10px">
+          <input id="guess-input" type="number" min="1" max="100" placeholder="Ваше число" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);width:120px">
+          <button id="guess-submit" class="btn">Проверить</button>
+          <button id="guess-restart" class="small">Перезапустить</button>
+        </div>
+        <div id="guess-message" style="margin-top:10px;color:var(--muted)"></div>
+        <div style="margin-top:8px">Осталось попыток: <span id="guess-left">10</span></div>
+      </section>
+    </div>
+
+  </main>
+
+  <script src="./minigames.js"></script>
+</body>
+</html>
