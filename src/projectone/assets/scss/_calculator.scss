@@ -1,0 +1,51 @@
+// Стили для страницы калькулятора услуг
+.site-header{
+  background: linear-gradient($red, $new_red);
+  color: $white;
+  padding: 18px 0;
+  .logo{ @include font(700); font-size:22px; }
+  .nav{ a{ color: $white; text-decoration: none; margin-left: 18px; } }
+}
+
+.main{
+  padding: 50px 0;
+  .title{ @include font(700); font-size: 48px; margin: 10px 0; }
+  .lead{ @include mons(300); color: $gray; margin-bottom: 30px; }
+}
+
+.card{ background: $white; padding: 20px; border-radius: 6px; box-shadow: 0 4px 18px rgba(0,0,0,0.08); display: flex; gap: 20px; }
+
+.calculator{
+  align-items: flex-start;
+  .service-list{ flex: 1;
+    .service-row{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px dotted #e6e6e6;
+      .service-name{ @include font(600); flex: 1; }
+      .price{ color: $gray; width: 120px; }
+      .qty{ width: 70px; padding: 6px; }
+    }
+    .controls{ margin-top: 18px;
+      .btn{ @include button($new_red, $red); }
+      .btn.ghost{ background: transparent; border: 1px solid $red; color: $red; }
+    }
+  }
+
+  .summary{
+    width: 320px;
+    padding: 15px;
+    border-left: 1px solid #eee;
+    h3{ @include font(700); }
+    .total{ @include font(700); margin-top: 12px; }
+    #breakdown{ max-height: 240px; overflow: auto; }
+  }
+}
+
+@media(max-width: 900px){
+  .wrapper{ width: 92%; }
+  .card{ flex-direction: column; }
+  .calculator{ .summary{ width: 100%; border-left: none; border-top: 1px solid #eee; } }
+}

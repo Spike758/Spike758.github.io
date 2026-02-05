@@ -1,0 +1,31 @@
+:root{
+  --black: #000000;
+  --white: #ffffff;
+  --red: #8d0c0c;
+  --new-red: #ff4f4f;
+  --light-red: #fc7575;
+  --gray: #000000b3;
+}
+*{box-sizing: border-box}
+body{font-family: 'Montserrat', sans-serif; margin:0; color:var(--black); background:#f7f7f7}
+.wrapper{width:75%; margin:0 auto; display:flex; justify-content:space-between; align-items:center}
+.site-header{background:linear-gradient(var(--red), var(--new-red)); color:var(--white); padding:18px 0}
+.site-header .logo{font-family:'Oswald', sans-serif; font-weight:700; font-size:22px}
+.nav a{color:var(--white); text-decoration:none; margin-left:18px}
+.main{padding:50px 0}
+.title{font-family:'Oswald', sans-serif; font-size:48px; margin:10px 0}
+.lead{color:var(--gray); margin-bottom:30px}
+.card{background:var(--white); padding:20px; border-radius:6px; box-shadow:0 4px 18px rgba(0,0,0,0.08); display:flex; gap:20px}
+.calculator{align-items:flex-start}
+.service-list{flex:1}
+.summary{width:320px; padding:15px; border-left:1px solid #eee}
+.service-row{display:flex; align-items:center; gap:12px; padding:12px 0; border-bottom:1px dotted #e6e6e6}
+.service-name{flex:1; font-weight:600}
+.price{color:#666; width:120px}
+.qty{width:70px; padding:6px}
+.controls{margin-top:18px}
+.btn{background:linear-gradient(var(--new-red), var(--red)); color:var(--white); border:none; padding:12px 20px; border-radius:6px; font-weight:600; cursor:pointer}
+.btn.ghost{background:transparent; border:1px solid var(--red); color:var(--red)}
+.total{font-weight:700; margin-top:12px}
+#breakdown{max-height:240px; overflow:auto}
+@media(max-width:900px){.wrapper{width:92%}.card{flex-direction:column}.summary{width:100%; border-left:none; border-top:1px solid #eee}}

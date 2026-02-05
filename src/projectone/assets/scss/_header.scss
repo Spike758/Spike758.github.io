@@ -1,0 +1,74 @@
+header{
+    padding: 45px 0;
+    .burger-menu{
+        transform: scaleX(-1);
+        .line{
+            height: 5px;
+            width: 40px;
+            border-radius: 5px;
+            background-color: $black;
+            margin-bottom: 10px;
+            transition: 0.4s;
+        }
+        #second{
+            width: 30px;
+        }
+        #third{
+            width: 15px;
+        }
+        &:hover{
+            #second{
+                width: 40px;
+            }
+            #third{
+                width: 40px;
+            }
+            cursor: pointer;
+        }
+    }
+    .block{
+        @extend %container;
+        .desc{
+            h2{
+                @include font(700);
+                font-size: 30px;
+            }
+            h3{
+                @include font(700);
+                font-size: 20px;
+            }
+            p{
+                @include mons(400);
+                font-size: 15px;
+            }
+        }
+        .circle{
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background-color: #2377AC;
+            z-index: 1;
+            
+            svg{
+                position: absolute;
+                z-index: 2;
+                left: 25%;
+                top: 25%;
+            }
+        }
+        .logo{
+            margin-right: 25px;
+            img{
+                height: 100px;
+            }
+        }
+    }
+    .menu{
+        @extend %container;
+        .block{
+            margin-right: 50px;
+        }
+    }
+
+}

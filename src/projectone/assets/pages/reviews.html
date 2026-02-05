@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+        emailjs.init("V_K5-dAzUDiL19Czq");
+     })();
+    </script>   
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+                <div class="block">
+                    <div class="logo">
+                        <a href="../../index.html"><img src="../img/title-removebg-preview.png" alt=""></a>
+                        
+                    </div>
+                
+                </div>
+                <div class="menu">
+                    <div class="block">
+                        <div class="logo">
+                            <div class="circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="25" height="25" viewBox="0 0 512 511" data-prefix="ian161qsv"><path d="M204.5 458.83v51.88l-12.539-10.13a840.729 840.729 0 0 1-94.781-92.71C32.7 333.8 0 267.31 0 210.255V204.6C0 91.783 91.738 0 204.5 0S409 91.783 409 204.6v5.655c0 4.791-.25 9.658-.72 14.582l-39.99-36.5c-8.19-83.2-78.517-148.412-163.79-148.412-90.758 0-164.6 73.876-164.6 164.678v5.655c0 96.415 124.164 213.135 164.6 248.575zm122.7-28.67h59.85v-59.89H327.2v59.89zM204.5 119.766a84.832 84.832 0 1 1-84.793 84.834 84.911 84.911 0 0 1 84.793-84.834zm0 39.921a44.913 44.913 0 1 0 44.891 44.913 44.952 44.952 0 0 0-44.891-44.913zM485.11 403.03l-11.22-10.24v64.09a54.173 54.173 0 0 1-54.1 54.12H293.461a54.173 54.173 0 0 1-54.1-54.12v-64.09l-11.218 10.24-26.891-29.49L356.62 231.722 512 373.54zm-51.12-46.66l-77.37-70.61-77.354 70.61v100.51a14.213 14.213 0 0 0 14.2 14.2H419.79a14.216 14.216 0 0 0 14.2-14.2V356.37zm0 0" fill-rule="evenodd" class="path-iz3ozcnai"></path></svg>
+                            </div>
+                        </div>
+                        <div class="desc">
+                            <p>Мы находимся</p>
+                            <h3>г. Павлодар, ул. Торайгырова, 44</h3>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="logo">
+                            <div class="circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="25" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="25" data-prefix="iedxpeyjz"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" data-changed="true" class="path-ithqphy3e"></path></svg>
+                            </div>
+                            
+                        </div>
+                        <div class="desc">
+                            <p>Звоните по номеру</p>
+                            <h3>8 (7182) 77 66 55</h3>
+                        </div>
+                    </div>
+                    <div class="burger-menu" onclick="menu()" >
+                        <div class="line"></div>
+                        <div id="second" class="line"></div>
+                        <div id="third" class="line"></div>
+                    </div>
+                </div>
+                
+        </div>
+   </header>
+   <section class="review" id="reviewR">
+        <div class="wrapper">
+            <h1>отзывы о нас</h1>
+            
+            <p id="warningMessage2">Пожалуйста, заполните все поля корректно.</p>
+            <div class="int">
+                <label for="">Имя</label>
+                <input type="text" name="" id="textName" onkeypress="noDigits(event)">
+            </div>
+            <div class="int">
+                <label for="">E-mail</label>
+                <input type="email" name="" id="textEmail">
+            </div>
+            <div class="int">
+                <label for="">Текст</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <input type="button" value="Оставить отзыв" class="btn" onclick="send_rw()">
+        </div>
+   </section>
+   <div class="burger-menu-info" id="burger-info">
+    <input type="button" value="X" class="btn" id="closeBurger" onclick="closeMenu()">
+    <nav>
+        <a href="../../index.html" id="aM" onclick="closeMenu()">Главная</a>
+        <a href="./company.html" onclick="closeMenu()">О нас</a>
+        <a href="./reviews.html" onclick="closeMenu()">Отзывы</a>
+    </nav>
+    </div>
+    <div class="shadow" id="shadowBack"></div>
+   <footer>
+    <div class="footer-back">
+        <div class="wrapper">
+          
+                <div class="contacts">
+                    <h2>контакты</h2>
+                    <div class="block">
+                        <div class="logo">
+                            <div class="circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="25" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="25" data-prefix="iedxpeyjz"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" data-changed="true" class="path-ithqphy3e"></path></svg>
+                            </div>
+                        </div>
+                        <div class="desc">
+                            <p>Звоните по номеру</p>
+                            <h3>8 (7182) 77 66 55</h3>
+                        </div>
+                    </div>
+                    <div class="block" id="secondBlock">
+                        <div class="logo">
+                            <div class="circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="25" height="25" viewBox="0 0 192 152" data-prefix="is6hwurwi"><path d="M172 152H20a20.023 20.023 0 0 1-20-20V20A20.023 20.023 0 0 1 20 0h152a20.021 20.021 0 0 1 20 20v112a20.021 20.021 0 0 1-20 20zm12-132a12.011 12.011 0 0 0-12-12H20A12.013 12.013 0 0 0 8 20v112a12.013 12.013 0 0 0 12 12h152a12.011 12.011 0 0 0 12-12V20zm-75.25 58.679a20.044 20.044 0 0 1-25.464.032L17.418 23.055a4 4 0 1 1 5.164-6.11l65.829 55.623a12.01 12.01 0 0 0 15.219-.032l65.79-55.591a4 4 0 1 1 5.16 6.11zm17.81 10.248l48 40a4 4 0 1 1-5.12 6.146l-48-40a4 4 0 0 1 5.12-6.146zm-109.388 53.9a4 4 0 0 1 0-5.658l48-48a4 4 0 0 1 5.656 5.658l-48 48a4 4 0 0 1-5.656.002z" fill-rule="evenodd" class="path-igcyx1jqm"></path></svg>
+                            </div>
+                        </div>
+                        <div class="desc">
+                            <p>Почта</p>
+                            <h3>megastroy@gmail.com</h3>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="logo">
+                            <div class="circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="25" height="25" viewBox="0 0 512 511" data-prefix="ian161qsv"><path d="M204.5 458.83v51.88l-12.539-10.13a840.729 840.729 0 0 1-94.781-92.71C32.7 333.8 0 267.31 0 210.255V204.6C0 91.783 91.738 0 204.5 0S409 91.783 409 204.6v5.655c0 4.791-.25 9.658-.72 14.582l-39.99-36.5c-8.19-83.2-78.517-148.412-163.79-148.412-90.758 0-164.6 73.876-164.6 164.678v5.655c0 96.415 124.164 213.135 164.6 248.575zm122.7-28.67h59.85v-59.89H327.2v59.89zM204.5 119.766a84.832 84.832 0 1 1-84.793 84.834 84.911 84.911 0 0 1 84.793-84.834zm0 39.921a44.913 44.913 0 1 0 44.891 44.913 44.952 44.952 0 0 0-44.891-44.913zM485.11 403.03l-11.22-10.24v64.09a54.173 54.173 0 0 1-54.1 54.12H293.461a54.173 54.173 0 0 1-54.1-54.12v-64.09l-11.218 10.24-26.891-29.49L356.62 231.722 512 373.54zm-51.12-46.66l-77.37-70.61-77.354 70.61v100.51a14.213 14.213 0 0 0 14.2 14.2H419.79a14.216 14.216 0 0 0 14.2-14.2V356.37zm0 0" fill-rule="evenodd" class="path-iz3ozcnai"></path></svg>
+                            </div>
+                        </div>
+                        <div class="desc">
+                            <p>Мы находимся</p>
+                            <h3>г. Павлодар, ул. Торайгырова, 44</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="send_request">
+                    <h3>остались вопросы?</h3>
+                        <p>Получите консультацию по телефону или напишите нам</p>
+                        <input type="text" placeholder="Ваше имя" onkeypress="noDigits(event)"  id="f11">
+                        <input type="tel" name="" id="" placeholder="Телефон" class="phoneMask" id="f22">
+                        <input type="button" value="Оставить заявку" class="btn" onclick="footerRequest()">
+                        <p id="warningMessage1">Пожалуйста, заполните все поля корректно.</p>
+                </div>
+            
+           
+        </div>
+    </div>
+   </footer>
+   <form action="" id="modal">
+    
+   </form>
+   <script src="https://unpkg.com/imask"></script>
+   <script src="../js/animate.js"></script>
+   <script src="../js/review.js"></script>
+</body>
+</html>
