@@ -1,0 +1,106 @@
+footer{
+    
+    .footer-back{
+        background: url(../img/Screenshot_6.png) center no-repeat;
+        background-size: cover;
+        padding-bottom: 60px;
+        .wrapper{
+            @extend %container;
+            .contacts{
+                padding-top: 60px;
+                h2{
+                    @include font(700);
+                    font-size: 90px;
+                    text-transform: uppercase;
+                    color: $white;
+                    padding-bottom: 20px;
+                }
+                .block{
+                    display: flex;
+                    padding-bottom: 40px;
+                    .desc{
+                        h2{
+                            @include font(700);
+                            font-size: 30px;
+                            color: $white;
+                        }
+                        h3{
+                            @include font(700);
+                            font-size: 20px;
+                            color: $white;
+                        }
+                        p{
+                            @include mons(400);
+                            font-size: 15px;
+                            color: $white;
+                        }
+                    }
+                    .circle{
+                        position: relative;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 100%;
+                        background-color: #d83434;
+                        z-index: 1;
+                        
+                        svg{
+                            position: absolute;
+                            z-index: 2;
+                            left: 25%;
+                            top: 25%;
+                        }
+                    }
+                    .logo{
+                        margin-right: 25px;
+                        img{
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                }
+            }
+            .send_request{
+                padding-top: 100px;
+                display: flex;
+                flex-direction: column;
+                h3{
+                    @include font(700);
+                    font-size: 50px;
+                    color: $white;
+                    text-transform: uppercase;
+                    padding-bottom: 15px;
+                }
+                p{
+                    @include mons(400);
+                    color: $white;
+                    font-size: 20px;
+                    width: 70%;
+                    padding-bottom: 20px;
+                }
+                input:not(button){
+                    border-bottom: 1px solid $new_gray;
+                    padding: 15px 10px;
+                    @include mons(400);
+                    font-size: 16px;
+                    margin-bottom: 35px;
+                    color: $white;
+                }
+                ::-webkit-input-placeholder{
+                    color: $new_gray;
+                }
+                .btn{
+                    @include button($red,$light_red);
+                    width: 40%;
+                    border-radius: 5px;
+                    padding: 25px 60px;
+                    @include font(400);
+                    font-size: 20px;
+                    &:hover{
+                        cursor: pointer;
+                        background: linear-gradient($new_red,$red);
+                    }
+                }
+            }
+        }
+    }
+}

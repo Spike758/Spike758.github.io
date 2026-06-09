@@ -1,0 +1,39 @@
+@import 'default';
+@import 'colors';
+@import 'mixin';
+@import 'animation';
+
+@import 'header';
+
+
+
+.about{
+    background-color: #fdfbfb;
+    .wrapper{
+        display: block;
+        padding: 70px 0;
+           
+                h1{
+                    @include font(700);
+                    font-size: 90px;
+                    text-transform: uppercase;
+                    margin-bottom: 40px;
+                    color: $main_black;
+                }
+                p{
+                    @include mons(400);
+                    font-size: 20px;
+                    line-height: 30px;
+                    width: 100%;
+                    color: $gray;
+                    margin-bottom: 10px;
+                }
+                .adr, .tel{
+                    color: $black;
+                    margin-bottom: 10px;
+                }
+                
+        
+    }
+}
+@import 'footer';

@@ -1,0 +1,87 @@
+#mainH2 {
+    position: relative;
+    left: -50%;
+    opacity: 0;
+    transition: left 1.5s ease-in-out, opacity 1.5s ease-in-out;
+    
+  }
+#mainH1 {
+    position: relative;
+    left: 80%;
+    opacity: 0;
+    transition: left 1.5s ease-in-out, opacity 1.5s ease-in-out;
+  }
+#servH1 {
+    position: relative;
+    left: 50%;
+    opacity: 0;
+    transition: left 1.2s ease-in-out, opacity 1.2s ease-in-out;
+  }
+#title {
+    position: relative;
+    left: -30%;
+    opacity: 0;
+    transition: left 1.2s ease-in-out, opacity 1.2s ease-in-out;
+}
+#aboutH2 {
+  position: relative;
+    left: 50%;
+    opacity: 0;
+    transition: left 1.2s ease-in-out, opacity 1.2s ease-in-out;
+}
+#descFirst {
+  position: relative;
+    left: -20%;
+    opacity: 0;
+    transition: left 1.2s ease-in-out, opacity 1.2s ease-in-out;
+}
+@keyframes bounceIn {
+  0% {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  60% {
+      transform: translateY(-30%);
+  }
+  80% {
+      transform: translateY(10%);
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.bounceIn {
+  animation: bounceIn 1s ease-in-out;
+}
+
+@keyframes unfold {
+  0% {
+    transform: perspective(800px) rotatey(90deg);
+    opacity: 0;
+  }
+  25%{
+    transform: perspective(800px) rotatey(-10deg);
+    opacity: 1;
+  }
+  50% {
+    transform: perspective(800px) rotatey(10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(800px) rotatey(0deg);
+    opacity: 1;
+  }
+}
+.circle{
+  opacity: 0;
+}
+.circle-animation{
+  opacity: 1;
+  transform-origin: center center;
+  animation: unfold 5s ease-in-out;
+  
+}
+
+

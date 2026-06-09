@@ -1,0 +1,15 @@
+a{
+    text-decoration: none;
+}
+p,h1,h2,h3,h4,h5,h6,body{
+    margin: 0;
+}
+.btn, button{
+    border: none;
+    background-color: transparent;
+}
+input[type=text],input[type=tel], input[type=email], textarea{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}

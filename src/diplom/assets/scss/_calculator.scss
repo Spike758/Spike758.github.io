@@ -1,0 +1,532 @@
+
+
+.calc-header {
+    background: linear-gradient(135deg, $calc-dark 0%, $calc-dark-light 100%);
+    color: $white;
+    padding: 60px 0 40px;
+    margin-bottom: 50px;
+
+    .wrapper {
+        display: block;
+        text-align: left;
+    }
+
+    h1 {
+        @include font(700);
+        font-size: 44px;
+        margin: 0 0 15px 0;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    p {
+        @include mons(400);
+        font-size: 16px;
+        color: $calc-light;
+        margin: 0;
+    }
+}
+
+.calculator-section {
+    padding: 30px 0;
+    background: $white;
+
+    .wrapper {
+        display: block;
+    }
+}
+
+
+.calculator-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+    background: $white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    h2 {
+        @include font(600);
+        font-size: 20px;
+        color: $calc-dark;
+        margin: 0 0 25px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+}
+
+.services-panel {
+    border-right: 1px solid $calc-light;
+    padding-right: 20px;
+}
+
+.category {
+    margin-bottom: 20px;
+}
+
+.category-title {
+    display: block;
+    width: 100%;
+    background: $calc-light;
+    border: none;
+    padding: 12px 15px;
+    margin: 0;
+    cursor: pointer;
+    @include mons(600);
+    font-size: 14px;
+    color: $calc-dark;
+    text-transform: uppercase;
+    text-align: left;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    user-select: none;
+
+    &:hover {
+        background: $calc-light-border;
+        color: darken($calc-dark, 10%);
+    }
+}
+
+.category-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    &.show {
+        max-height: 500px;
+    }
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid $calc-light;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+        background: $calc-background;
+    }
+
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+        cursor: pointer;
+        accent-color: $calc-dark;
+    }
+}
+
+.service-name {
+    flex: 1;
+    @include mons(500);
+    font-size: 13px;
+    color: $calc-dark;
+}
+
+.base-price {
+    @include mons(600);
+    font-size: 13px;
+    color: $calc-dark-light;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.calculator-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.params-section {
+    flex: 1;
+}
+
+.param-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+    label {
+        @include mons(600);
+        font-size: 13px;
+        color: $calc-dark;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+    }
+
+    input[type="number"],
+    select {
+        padding: 10px 12px;
+        border: 1px solid $calc-border;
+        border-radius: 4px;
+        @include mons(400);
+        font-size: 14px;
+        color: $calc-dark;
+        outline: none;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+            border-color: $calc-dark;
+            box-shadow: 0 0 0 3px rgba($calc-dark, 0.1);
+        }
+    }
+
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        cursor: pointer;
+        accent-color: $calc-dark;
+
+        & + span {
+            @include mons(400);
+            font-size: 13px;
+            color: $calc-dark;
+            cursor: pointer;
+        }
+    }
+}
+
+.param-hint {
+    @include mons(400);
+    font-size: 11px;
+    color: $calc-gray-light;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.complexity-display {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 15px;
+    background: $calc-light;
+    border-radius: 4px;
+    border: 1px solid $calc-light-border;
+}
+
+.complexity-value {
+    @include mons(600);
+    font-size: 14px;
+    color: $calc-dark;
+}
+
+.complexity-info {
+    @include mons(400);
+    font-size: 11px;
+    color: $calc-gray;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.calc-button {
+    align-self: flex-start;
+    padding: 10px 25px;
+    background: transparent;
+    border: 2px solid $calc-dark;
+    color: $calc-dark;
+    border-radius: 4px;
+    cursor: pointer;
+    @include mons(600);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: $calc-dark;
+        color: $white;
+    }
+}
+
+.summary-block {
+    background: $white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    h2 {
+        @include font(600);
+        font-size: 20px;
+        color: $calc-dark;
+        margin: 0 0 25px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid $calc-light;
+        padding-bottom: 15px;
+    }
+}
+
+.summary-content {
+    min-height: 150px;
+    margin-bottom: 25px;
+}
+
+.empty-message {
+    color: $calc-gray-light;
+    @include mons(400);
+    font-size: 14px;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.summary-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dotted $calc-light;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.item-name {
+    @include mons(500);
+    font-size: 13px;
+    color: $calc-dark;
+}
+
+.item-price {
+    @include mons(600);
+    font-size: 14px;
+    color: $calc-dark;
+}
+
+.summary-divider {
+    height: 1px;
+    background: $calc-light;
+    margin: 15px 0;
+}
+
+.additional-charges {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.charge-item {
+    @include mons(400);
+    font-size: 12px;
+    color: $calc-gray;
+    padding-left: 0;
+}
+
+.summary-footer {
+    border-top: 2px solid $calc-light;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-price {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    span:first-child {
+        @include mons(600);
+        font-size: 13px;
+        color: $calc-gray-light;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+}
+
+.price-value {
+    @include font(700);
+    font-size: 32px;
+    color: $calc-dark;
+}
+
+.order-button {
+    padding: 12px 35px;
+    background: $calc-dark;
+    color: $white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    @include mons(700);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: darken($calc-dark, 10%);
+        box-shadow: 0 4px 12px rgba($calc-dark, 0.25);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+
+#calculatorModal {
+    display: none;
+
+    &.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 35px;
+        border-radius: 5px;
+        background-color: $white;
+        z-index: 99;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+        width: 100%;
+        max-width: 500px;
+        max-height: 85vh;
+        overflow: visible;
+        box-sizing: border-box;
+
+        h4 {
+            @include font(700);
+            color: $main_black;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+
+        p {
+            @include mons(400);
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+            flex-shrink: 0;
+        }
+
+        input:not(button) {
+            @include mons(400);
+            font-size: 16px;
+            padding: 15px 10px;
+            border-bottom: 2px solid #bcb9b9;
+            width: 100%;
+            margin-bottom: 25px;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+            flex-shrink: 0;
+
+            &:focus {
+                border-bottom-color: $calc-dark;
+                box-shadow: 0 2px 0 $calc-dark;
+            }
+        }
+
+        button {
+            background: linear-gradient($red, $light_red);
+            color: $white;
+            @include font(700);
+            padding: 16px 30px;
+            border: none;
+            transition: 0.3s;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+
+            &:hover {
+                background: linear-gradient($new_red, $red);
+                box-shadow: 0 4px 12px rgba($red, 0.3);
+            }
+
+            &:active {
+                transform: translateY(1px);
+            }
+        }
+
+        input[type="button"] {
+            background: linear-gradient($red, $light_red);
+            color: $white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+                background: linear-gradient($red, $new_red);
+            }
+        }
+
+        #modal-btn-close {
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            border-radius: 100%;
+            margin-bottom: 0px;
+            bottom: 94%;
+            left: 94%;
+            position: fixed;
+            border: 5px solid $white;
+            background: linear-gradient($red, $light_red);
+            color: $white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                cursor: pointer;
+                background: linear-gradient($red, $new_red);
+            }
+        }
+
+        #warningMessageCalc {
+            display: none;
+            color: $red;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        #calc-order-summary {
+            flex-shrink: 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    }
+}
+
+.shadow {
+    display: none;
+
+    &.active {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        background: $black;
+        opacity: 0.5;
+        z-index: 10;
+    }
+}
